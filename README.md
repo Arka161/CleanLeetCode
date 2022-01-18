@@ -12,3 +12,7 @@ I personally do not believe LeetCode or textbook algorithmic problems reflect th
 ## Why am I doing this? 
 
 Most LeetCode editorials promote 1-liner solutions, and there seems to be some weird 'competition' on how to make your code shorter. I personally do not like LeetCode promoting abysmal coding practices, and I will *try* to write code that reads a little smoother, as in the real industry, readability > showing the person reading the code that you know extra language specific tricks and shortcuts.
+
+## Guidelines: 
+
+Each problem might have multiple solutions, and I will probably go with the format of `1.cpp`, `2.cpp`, etc, in an incremental fashion from 1 to N, where 1 refers to the worst asymptotic performance, and N refers to the best asymptotic performance. 
