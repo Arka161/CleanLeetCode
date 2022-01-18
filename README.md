@@ -11,4 +11,4 @@ I personally do not believe LeetCode or textbook algorithmic problems reflect th
 
 ## Why am I doing this? 
 
-I personally do not like LeetCode promoting abysmal coding practices, and I will *try* to write code that reads a little smoother, as in the real industry, readability > showing the person reading the code that you know extra language specific tricks and shortcuts.
+Most LeetCode editorials promote 1-liner solutions, and there seems to be some weird 'competition' on how to make your code shorter. I personally do not like LeetCode promoting abysmal coding practices, and I will *try* to write code that reads a little smoother, as in the real industry, readability > showing the person reading the code that you know extra language specific tricks and shortcuts.
