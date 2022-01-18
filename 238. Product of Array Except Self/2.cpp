@@ -19,11 +19,13 @@ public:
         
         // answerArray is the right array (same logic from 1.cpp)
         std::vector<int> answerArray(arrSize);
-        answerArray[arrSize - 1] = 1;         
-        int prod2 = 1;
+        answerArray[arrSize - 1] = 1;  
+        
+        // The prod array holds the product of every element to the right of i
+        int prod = 1;
         for (int i = arrSize - 2; i >= 0; i--) {
-            prod2 = prod2 * nums[i + 1];
-            answerArray[i] = prod2;
+            prod = prod * nums[i + 1];
+            answerArray[i] = prod;
         }
         int leftProd = 1;
         for (int i = 0; i < arrSize; i++) {
