@@ -15,11 +15,8 @@ public:
             int currentNum = nums[i];
             
             std::vector<int> maxList = {currentNum, currentNum * curMin, currentNum * curMax};
-            int maxFromList = *std::max_element(maxList.begin(), maxList.end());
-            int minFromList = *std::min_element(maxList.begin(), maxList.end());
-            
-            curMax = maxFromList;
-            curMin = minFromList;
+            curMax = *std::max_element(maxList.begin(), maxList.end());
+            curMin = *std::min_element(maxList.begin(), maxList.end());
             
             result = std::max(result, curMax);
         }
