@@ -8,6 +8,8 @@ class Solution {
 public:
     vector<int> productExceptSelf(vector<int>& nums) {
         // Example Input: [1, 2, 3, 4]
+        
+        // Why am I using static_cast? The size operator in C++ returns a size_t datatype, which is not the same as int.
         int arrSize = static_cast<int>(nums.size());
         
         if (arrSize <= 1) {
@@ -18,22 +20,22 @@ public:
         std::vector<int> right(arrSize);
         
         int leftMost = 1;
-        int prod = 1;
+        int prodLeft = 1;
         
         left[0] = 1;
         
         for (int i = 1; i < arrSize; i++) {
-            prod = prod * nums[i - 1];  
-            left[i] = prod;
+            prodLeft = prodLeft * nums[i - 1];  
+            left[i] = prodLeft;
         }
         
         // Example LeftArray: [1,1,2,6]
 
         right[arrSize - 1] = 1;
-        int prod2 = 1;
+        int prodRight = 1;
         for (int i = arrSize - 2; i >= 0; i--) {
-            prod2 = prod2 * nums[i + 1];
-            right[i] = prod2;
+            prodRight = prodRight * nums[i + 1];
+            right[i] = prodRight;
         }
         // Example RightArray: [24, 12, 4, 1]
         
