@@ -10,6 +10,8 @@ class Solution:
         
         # Why range from 0 to len(nums) - 2? We are caring about only a Triplet. 
         for i in range(len(nums) - 2):
+            
+            # We compare ONLY RHS as it's sorted. If the element is > 0, we can skip the pass. 
             if nums[i] > 0:
                 continue
             if i > 0 and nums[i] == nums[i - 1]:
