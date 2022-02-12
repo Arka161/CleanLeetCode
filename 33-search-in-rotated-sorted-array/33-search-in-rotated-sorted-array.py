@@ -13,8 +13,6 @@ class Solution:
                 high = mid
         start = low
         
-        #print("Low here is", start)
-        
         low = 0
         high = len(nums) - 1
         
