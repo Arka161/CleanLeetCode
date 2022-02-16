@@ -1,5 +1,5 @@
 SELECT id,
-MAX(CASE WHEN month = 'Jan' THEN revenue END) AS Jan_Revenue,
+SUM(CASE WHEN month = 'Jan' THEN revenue END) AS Jan_Revenue,
 MIN(CASE WHEN month = 'Feb' THEN revenue END) AS Feb_Revenue,
 MIN(CASE WHEN month = 'Mar' THEN revenue END) AS Mar_Revenue,
 MIN(CASE WHEN month = 'Apr' THEN revenue END) AS Apr_Revenue,
