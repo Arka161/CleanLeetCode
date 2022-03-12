@@ -5,10 +5,9 @@ class Solution:
         
         while leftPtr < rightPtr:
             if numbers[leftPtr] + numbers[rightPtr] == target:
-                return (leftPtr+1, rightPtr+1)
-            
-            if numbers[leftPtr] + numbers[rightPtr] > target:
+                return leftPtr+1, rightPtr+1
+            elif numbers[leftPtr] + numbers[rightPtr] > target:
                 rightPtr -= 1
             else:
                 leftPtr += 1
-        return (0,0)
+        return -1, -1
