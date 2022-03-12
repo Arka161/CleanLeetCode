@@ -1,35 +1,42 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        # First Compute the Minimum Value in the Rotated Sorted Array
-        low = 0
-        high = len(nums) - 1
+        # Find minimum 
+        low_val = 0
+        high_val = len(nums) - 1
         
-        while low < high:
-            mid = int((low + high)/2)
+        while low_val < high_val:
+            mid = int((low_val + high_val)/2)
             
-            if nums[mid] > nums[high]:
-                low = mid + 1
+            if nums[mid] > nums[high_val]:
+                low_val = mid + 1
+                
             else:
-                high = mid
-        start = low
-        
-        low = 0
-        high = len(nums) - 1
-        
-        if nums[start] <= target and nums[high] >= target:
-            low = start
+                high_val = mid
+                
+        # start here is the index of the minimum value
+        start = low_val
+        end = len(nums) - 1
+        new_low = 0
+        new_high = 0
+        if target >= nums[start] and target <= nums[end]:
+            new_low = start
+            new_high = end
         else:
-            high = start
+            new_low = 0
+            new_high = start
         
-        # Singular Element Edge case, can also decide to fix this by using <= in the main binary search API call.
-        while low <= high:
-            mid = int((low + high)/2)
+        while new_low <= new_high: 
+            mid = int((new_low + new_high) / 2)
+            
             if nums[mid] == target:
                 return mid
             
             if nums[mid] > target:
-                high = mid - 1
+                new_high = mid - 1
             else:
-                low = mid + 1
+                new_low = mid + 1
         return -1
-                
+        
+        
+        
+        
