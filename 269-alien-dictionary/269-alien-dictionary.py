@@ -18,7 +18,7 @@ class Solution:
                 if w1[j] != w2[j]:
                     adj[w1[j]].add(w2[j])
                     break
-        print(adj)
+        #print(adj)
         
         visit = {}
         
