@@ -1,6 +1,4 @@
 class Solution:
-    def __init__(self):
-        pass
     def pacificAtlantic(self, heights: List[List[int]]) -> List[List[int]]:
         if len(heights) == 0:
             return 
