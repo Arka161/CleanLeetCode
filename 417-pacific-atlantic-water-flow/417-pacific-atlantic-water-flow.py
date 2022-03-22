@@ -15,17 +15,15 @@ class Solution:
         pacific = [[False for x in range(n)] for y in range(m)]
         
         ans = []
+        visited = [[False for x in range(n)] for y in range(m)] 
         
         def dfs(mat, isPacific, i, j):
-            visited = [[False for x in range(n)] for y in range(m)] 
+            
             if isPacific:
                 visited = atlantic 
             else: 
                 visited = pacific
-#             print("I HERE IS ", i)
-#             print("J HERE IS ", j)
-            
-#             print("VISITED IS", visited)
+
             if visited[i][j]:
                 return
             visited[i][j] = True
