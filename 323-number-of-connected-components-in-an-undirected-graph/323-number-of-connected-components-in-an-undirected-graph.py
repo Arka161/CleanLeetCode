@@ -4,15 +4,11 @@ class Solution:
         
         par = [i for i in range(n)]
         
-        rank = [1] * n 
+        rank = [1] * n
         
         def find(n1):
             res = n1
-            
             while res != par[res]:
-                # Path Compression 
-                # INSERT HERE
-                #par[res] = par[par[res]]
                 res = par[res]
                 
             return res
