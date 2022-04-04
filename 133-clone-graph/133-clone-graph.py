@@ -7,21 +7,20 @@ class Node:
 """
 
 class Solution:
-    def __init__(self):
-        self.visited = dict()
-    
     def cloneGraph(self, node: 'Node') -> 'Node':
         if not node:
             return node
+        oldToNew = dict()
         
-        if node in self.visited:
-            return self.visited[node]
-        
-        clone_node = Node(node.val, [])
-        
-        self.visited[node] = clone_node
-        
-        if node.neighbors:
-            clone_node.neighbors = [self.cloneGraph(n) for n in node.neighbors]
-        
-        return clone_node
+        def dfs(node):
+            if node in oldToNew:
+                return oldToNew[node]
+            
+            copied = Node(node.val, [])
+            oldToNew[node] = copied
+            
+            for nei in node.neighbors:
+                copied.neighbors.append(dfs(nei))
+                
+            return copied
+        return dfs(node)
