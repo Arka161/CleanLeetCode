@@ -6,8 +6,8 @@ class Solution:
         def find(n):
             p = par[n]
             while p != par[p]:
-                print("weird loop runs")
                 p = par[p]
+                
             return p
         def union(n1, n2):
             p1, p2 = find(n1), find(n2)
